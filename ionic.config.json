@@ -1,5 +1,7 @@
 {
   "name": "RekrutmenSydeco",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

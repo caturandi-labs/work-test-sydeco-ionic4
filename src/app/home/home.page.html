@@ -1,14 +1,41 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Test Rekrutmen Sydeco
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card class="card-full-size">
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let slide of slides">
+        <img src="{{slide.url}}" [ngStyle]="{'width': '100%'}">
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <section class="text-section">
+      <h6>Events Article</h6>
+    </section>
+    <ion-card *ngFor="let data of articles" class="post-card">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" >
+            <img item-start src="{{data.image}}" >
+          </ion-col>
+          <ion-col size="8">
+            <ion-text>
+              <p no-margin [innerHTML]="data.title" text-wrap></p>
+            </ion-text>
+            <ion-chip>
+              <ion-icon name="calendar"></ion-icon>
+              <ion-label [innerHTML]="data.date"></ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
   </div>
 </ion-content>
